@@ -1,0 +1,31 @@
+{
+  "name": "nummify",
+  "version": "1.0.0",
+  "description": "A lightweight library for converting numbers into their written word representation in multiple languages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node ."
+  },
+  "keywords": [
+    "number",
+    "reader",
+    "nummify",
+    "text",
+    "conversion",
+    "numbers to words",
+    "localization",
+    "internationalization",
+    "math"
+  ],
+  "author": "Shadi AL-Hakimi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HakimiDev/nummify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HakimiDev/nummify/issues"
+  },
+  "homepage": "https://github.com/HakimiDev/nummify#README.md"
+}
