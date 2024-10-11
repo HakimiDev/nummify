@@ -130,4 +130,8 @@ const numReader = { // Made by Software Engineer: Shadi-AL-Hakimi
     readerConfig
 };
 
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = numReader;
+}
+
 export default numReader;
