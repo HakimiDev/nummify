@@ -113,7 +113,7 @@ function readNumbers(number = '', lang = 'en') {
     let floatResult = '';
     if (parseFloat(decimal) > 0) {
         const floatNumbers = parseInt(decimal.split('').reverse().join('')).toString().split('').reverse().join('').split('');
-        for (num of floatNumbers) floatResult += readNumber(num, lang) + ' ';
+        for (const num of floatNumbers) floatResult += readNumber(num, lang) + ' ';
         if (floatResult.length > 0) floatResult = ` ${pointExpression} ` + floatResult.trim();
     }
 
@@ -131,4 +131,3 @@ const numReader = { // Made by Software Engineer: Shadi-AL-Hakimi
 };
 
 export default numReader;
-module.exports = numReader;

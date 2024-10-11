@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A lightweight library for converting numbers into their written word representation in multiple languages.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node ."
@@ -27,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/HakimiDev/nummify/issues"
   },
-  "homepage": "https://github.com/HakimiDev/nummify#README.md"
+  "homepage": "https://github.com/HakimiDev/nummify#README.md",
+  "dependencies": {
+    "nummify": "^1.0.0"
+  }
 }
