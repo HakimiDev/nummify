@@ -27,8 +27,8 @@ Getting started with `nummify` is simple. Here’s how to use the library:
 ```javascript
 import numReader from 'nummify';
 
-console.log(numReader.readNumbers('1234.5', 'en')); // Output: "one thousand two hundred thirty-four point five"
-console.log(numReader.readNumbers('1234.5', 'ar')); // Output: "الف ومئتان وأربعة وثلاثون فاصلة خمسة"
+console.log(numReader.readNumber('1234.5', 'en')); // Output: "one thousand two hundred thirty-four point five"
+console.log(numReader.readNumber('1234.5', 'ar')); // Output: "الف ومئتان وأربعة وثلاثون فاصلة خمسة"
 ```
 
 ## Supported Languages
