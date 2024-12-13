@@ -6,12 +6,20 @@ const readerConfig = {
             ['صفر', 'مائة', 'مئتان', 'ثلاثمائة', 'أربعمائة', 'خمسمائة', 'ستمائة', 'سبعمائة', 'ثمانمائة', 'تسعمائة']
         ],
         specialNumbers: ['عشرة', 'أحد عشر', 'اثنا عشر'],
+        readerOrder: [2, 0, 1], // 2: hundreds, 1: tens, 0: ones
         separateOperators: { and: 'و', space: 'و' },
-        orders: ['الف', 'مليون', 'مليار', 'تريليون', 'كوادريليون', 'كوانتيليون', 'سيكستيليون', 'سبتليليون', 'أوكتليون', 'نونوليون', 'ديكليون', 'أوندكليون', 'دودكليون', 'تريدكليون', 'كواتوردكليون', 'كواندكليون', 'سيكسدكليون', 'سبتندكليون', 'أوكتودكليون', 'نونوودكليون', 'فيجنتليون', 'أونفيجنتليون', 'دودفيجنتليون', 'تريفجنتليون', 'كواتورفيجنتليون', 'كواندفيجنتليون', 'سيكسفيجنتليون', 'سبتينفجنتليون', 'أوكتوفيجنتليون', 'نونوفيجنتليون', 'ترينجليون', 'أونترينجليون', 'دوترينجليون', 'ترترينجليون', 'كواتورترينجليون', 'كوانترينجليون', 'سيكسترينجليون', 'سبتينترينجليون', 'أوكتوترينجليون', 'نونوترينجليون', 'كوادريغليون', 'أونكوادريغليون', 'دوكوادريغليون', 'تر كوادريغليون', 'كواتوركوادريغليون', 'كوانكوادريغليون', 'سيكوكوادريغليون', 'سبتينكوادريغليون', 'أوكوكوادريغليون', 'نونوكوادريغليون', 'كوانتوجليون', 'أونكوانتوجليون', 'دوكوانتوجليون', 'تر كوانتوجليون', 'كواتوركوانتوجليون', 'كوانكوانتوجليون', 'سيكوكوانتوجليون', 'سبتينكوانتوجليون', 'أوكوكوانتوجليون', 'نونوكوانتوجليون', 'سيكسون', 'أونسكسون', 'دوسكسون', 'ترسكسون', 'كواتور سكسون', 'كوانسكسون', 'سيكسسكسون', 'سبتنسكسون', 'أوكتوسكسون', 'نونسكسون', 'سبتريون', 'أونسبتريون', 'دوسبتريون', 'ترسبتريون', 'كواتورسبتريون', 'كوانسبتريون', 'سيكسسبتريون', 'سبتنسبرتريون', 'أوكوسبتريون', 'نونسبتريون', 'أوكتوبلون', 'أونوكتوبلون', 'دوأوكتوبلون', 'ترأوكتوبلون', 'كواتورأوكتوبلون', 'كوانأوكتوبلون', 'سيكسأوكتوبلون', 'سبتينأوكتوبلون', 'أوكتوأوكتوبلون', 'نونأوكتوبلون', 'نوناينتليون', 'أوننوناينتليون', 'دونوناينتليون', 'ترنوناينتليون', 'كواتورنوناينتليون', 'كواننوناينتليون', 'سيكسنوناينتليون', 'سبتيننوناينتليون', 'أوكنوناينتليون', 'نوننوناينتليون', 'غوغول'],
-        additions: ['ان'],
+        orders: ["الف", "مليون", "مليار", "تريليون", "كوادريليون", "كوينتيليون", "سيكستيليون", "سبتيليون", "أوكتليون", "نونيليون", "ديكليون", "أونديسليون", "دوديسليون", "تراديليون", "كواتوديسليون", "كوينديليون", "سيكسيليون", "سبتديليون", "أوكتوديسليون", "نوفيم ديليون", "فيجنتيليون", "أوندفيجنتيليون", "دودفيجنتيليون", "ترفيجنتيليون", "كواتودفيجنتيليون", "كوينفيجنتيليون", "سيكسفيجنتيليون", "سبتنفيجنتيليون", "أوكتوفيجنتيليون", "نوفيم فيجنتيليون", "ترينتيليون", "أوندترينتيليون", "دوترينتيليون"],
+        additions: {
+            2: { pure: 'ان', impure: 'ين' },
+            '3-10': 'ات',
+            '11-99': 'اً'
+        },
         minusExpression: 'سالب',
         infinityExpression: 'مالانهاية',
-        pointExpression: 'فاصلة'
+        pointExpression: 'فاصلة',
+        separateFloat: false,
+        readOrderWithOne: true,
+        removeAllSpaces: false,
     },
     en: {
         numbers: [
@@ -20,17 +28,21 @@ const readerConfig = {
             ['zero', 'one hundred', 'two hundred', 'three hundred', 'four hundred', 'five hundred', 'six hundred', 'seven hundred', 'eight hundred', 'nine hundred']
         ],
         specialNumbers: ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'],
+        readerOrder: [2, 1, 0], // 2: hundreds, 1: tens, 0: ones
         separateOperators: { and: 'and', space: '' },
-        orders: ['thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quattuordecillion', 'quindecillion', 'sexdecillion', 'septendecillion', 'octodecillion', 'novemdecillion', 'vigintillion', 'unvigintillion', 'duovigintillion', 'trevigintillion', 'quattuorvigintillion', 'quinvigintillion', 'sexvigintillion', 'septenvigintillion', 'octovigintillion', 'novemvigintillion', 'trigintillion', 'untrigintillion', 'duotrigintillion', 'tretrigintillion', 'quattuortrigintillion', 'quintrigintillion', 'sextrigintillion', 'septentrigintillion', 'octotrigintillion', 'novemtrigintillion', 'quadragintillion', 'unquadragintillion', 'doquadragintillion', 'trequadragintillion', 'quattuorquadragintillion', 'quinquadragintillion', 'sexquadragintillion', 'septenquadragintillion', 'octoquadragintillion', 'novemquadragintillion', 'quinquagintillion', 'unquinquagintillion', 'doquinquagintillion', 'trequinquagintillion', 'quattuorquinquagintillion', 'quinquinquagintillion', 'sexquinquagintillion', 'septenquinquagintillion', 'octoquinquagintillion', 'novemquinquagintillion', 'sexagintillion', 'unsexagintillion', 'dosexagintillion', 'tresexagintillion', 'quattuorsexagintillion', 'quinsexagintillion', 'sexsexagintillion', 'septensexagintillion', 'octosexagintillion', 'novemsexagintillion', 'septuagintillion', 'unseptuagintillion', 'doseptuagintillion', 'treseptuagintillion', 'quattuorseptuagintillion', 'quinseptuagintillion', 'sexseptuagintillion', 'septenseptuagintillion', 'octoseptuagintillion', 'novemseptuagintillion', 'octogintillion', 'unoctogintillion', 'dooctogintillion', 'treoctogintillion', 'quattuoroctogintillion', 'quinoctogintillion', 'sexoctogintillion', 'septenoctogintillion', 'octooctogintillion', 'novemoctogintillion', 'nonagintillion', 'unnonagintillion', 'dononagintillion', 'trenonagintillion', 'quattuornonagintillion', 'quinnonagintillion', 'sexnonagintillion', 'septennonagintillion', 'octononagintillion', 'novemnonagintillion', 'googol'],
-        additions: [],
+        orders: ["thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion", "quindecillion", "sexdecillion", "septendecillion", "octodecillion", "novemdecillion", "vigintillion", "unvigintillion", "duovigintillion", "trevigintillion", "quattuorvigintillion", "quinvigintillion", "sexvigintillion", "septenvigintillion", "octovigintillion", "novemvigintillion", "trigintillion", "untrigintillion", "duotrigintillion"],
+        additions: {},
         minusExpression: 'minus',
         infinityExpression: 'Infinity',
-        pointExpression: 'point'
+        pointExpression: 'point',
+        separateFloat: true,
+        readOrderWithOne: true,
+        removeAllSpaces: false,
     }
 };
 
-function readNumber(number = '', lang = 'en') { // For reading only 3 digits
-    const { numbers, specialNumbers, separateOperators } = readerConfig[lang.toLowerCase().trim()];
+function readChunk(number = '', lang = 'en') { // For reading only 3 digits
+    const { numbers, specialNumbers, separateOperators, readerOrder } = readerConfig[lang.toLowerCase().trim()];
     if (number == 0) return numbers[0][0];
 
     const sectionResult = {
@@ -44,7 +56,7 @@ function readNumber(number = '', lang = 'en') { // For reading only 3 digits
         const section = (number.length - i) - 1;
         const left = number.substring(i);
 
-        if (section == 1 && digit == 1) { // to reading the special numbers
+        if (section == 1 && digit == 1) { // To reading the special numbers
             const special = specialNumbers[left[left.length - 1]];
             if (special) {
                 sectionResult[section] = special;
@@ -55,12 +67,21 @@ function readNumber(number = '', lang = 'en') { // For reading only 3 digits
         sectionResult[section] = numbers[section][digit];
     }
 
-    if (lang == 'ar' && sectionResult[1] == numbers[1][1]) { // to remove the andOperator
+    if (lang == 'ar' && sectionResult[1] == numbers[1][1]) { // To remove the separateOperator
         sectionResult[1] = sectionResult[0] + ' ' + sectionResult[1];
         sectionResult[0] = null;
     }
 
-    const result = lang == 'ar' ? [sectionResult[2], sectionResult[0], sectionResult[1]] : [sectionResult[2], sectionResult[1], sectionResult[0]];
+    if (lang == 'en' && sectionResult[1] && sectionResult[0] && sectionResult[1] != numbers[0][0]) { // Add '-' between the tens and ones 
+        sectionResult[1] = sectionResult[1] + '-' + sectionResult[0];
+        sectionResult[0] = null;
+    }
+
+    const result = [];
+    readerOrder.forEach(order => {
+        if (sectionResult[order]) result.push(sectionResult[order]);
+    });
+
     return result.filter(e => e && e != numbers[0][0]).join(' ' + separateOperators.space);
 }
 
@@ -77,16 +98,16 @@ function isValidNumber(str) {
 }
 
 function isValidLang(lang = '') {
-    return ['ar', 'en'].includes(lang.toLowerCase().trim());
+    return Object.keys(readerConfig).includes(lang.toLowerCase().trim());
 }
 
-function readNumbers(number = '', lang = 'en') {
-    number = number.toString();
+function readNumber(number = '', lang = 'en') {
+    number = number.toString().replaceAll(',', '').replaceAll('_', '').replace(/[٠-٩]/g, e => '٠١٢٣٤٥٦٧٨٩'.indexOf(e)).trim();
 
     if (!isValidNumber(number)) throw new Error('Invalid Number!');
     if (!isValidLang(lang)) throw new Error('Invalid Language!');
 
-    const { numbers, orders, separateOperators, additions, minusExpression, infinityExpression, pointExpression } = readerConfig[lang.toLowerCase().trim()];
+    const { numbers, orders, separateOperators, additions, minusExpression, infinityExpression, pointExpression, separateFloat, readOrderWithOne, removeAllSpaces } = readerConfig[lang.toLowerCase().trim()];
 
     const result = [];
     const [integer, decimal] = toLocalString(number.replaceAll('-', '')).split('.');
@@ -99,22 +120,42 @@ function readNumbers(number = '', lang = 'en') {
         if (chunk == 0) continue;
 
         let order = orders[chunks.length - (i + 2)];
-        if (lang == 'ar' && chunk <= 2 && order == orders[0]) {
-            if (chunk == 2) order = order + additions[0];
-            result.push(order);
-        } else result.push(readNumber(chunk, lang) + (order ? ' ' + order : ''));
+        if (lang == 'ar' && order) { // Smart reading with the orders
+            if (chunk == 2 && order == orders[0]) {
+                order += (!chunks[i + 1] || chunks[i + 1] == 0) ? additions[chunk].pure : additions[chunk].impure;
+                result.push(order);
+                continue;
+            }
+
+            if (chunk == 1 && (!readOrderWithOne || order == orders[0])) {
+                result.push(order);
+                continue;
+            }
+
+            const tens = parseInt((chunk.length == 3) ? chunk.substring(1) : chunk);
+            if (tens >= 3 && tens <= 10) order += additions['3-10']
+            else if (tens >= 11 && tens <= 99) order += additions['11-99']
+
+            order = order.replaceAll('الفات', 'آلاف').replaceAll('مليونات', 'ملايين');
+        }
+
+        result.push(readChunk(chunk, lang) + (order ? ' ' + order : ''));
     }
 
     if (lang == 'en' && result.length > 1) {
-        let last = result.pop();
+        const last = result.pop();
         result.push(separateOperators.and + ' ' + last);
     }
 
-    let floatResult = '';
+    let floatResult = [];
     if (parseFloat(decimal) > 0) {
-        const floatNumbers = parseInt(decimal.split('').reverse().join('')).toString().split('').reverse().join('').split('');
-        for (const num of floatNumbers) floatResult += readNumber(num, lang) + ' ';
-        if (floatResult.length > 0) floatResult = ` ${pointExpression} ` + floatResult.trim();
+        const floatNumbers = parseInt(decimal.split('').reverse().join('')).toString().split('').reverse().join('');
+
+        if (separateFloat) {
+            for (const num of floatNumbers.split('')) floatResult.push(readChunk(num, lang));
+        } else floatResult.push(readChunk(floatNumbers, lang));
+
+        if (floatResult.length > 0) floatResult = ` ${pointExpression} ` + floatResult.join(' ');
     }
 
     const minus = (parseInt(number) < 0) ? minusExpression + ' ' : '';
@@ -122,16 +163,23 @@ function readNumbers(number = '', lang = 'en') {
     let integerResult = (minus + (lang == 'ar' ? result.join(' ' + separateOperators.and) : result.join(' '))).trim();
     if (integerResult.length <= 0) integerResult = numbers[0][0];
 
-    return integerResult + floatResult
+    const finalResult = integerResult + floatResult
+
+    return removeAllSpaces ? finalResult.replaceAll(' ', '') : finalResult;
 }
 
-const numReader = { // Made by Software Engineer: Shadi-AL-Hakimi
-    readNumbers,
+function addLanguage(langCode, config) {
+    if (readerConfig[langCode]) {
+        throw new Error(`Language ${langCode} already exists.`);
+    }
+
+    readerConfig[langCode] = config;
+}
+
+const numReader = { // Made By Software Engineer: Shadi-AL-Hakimi
+    readNumber,
+    addLanguage,
     readerConfig
 };
-
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = numReader;
-}
 
 export default numReader;

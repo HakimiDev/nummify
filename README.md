@@ -12,18 +12,6 @@ You can install `nummify` using any of the following package managers:
 npm install nummify
 ```
 
-### yarn
-
-```bash
-yarn add nummify
-```
-
-### pnpm
-
-```bash
-pnpm add nummify
-```
-
 ### bun
 
 ```bash
@@ -39,16 +27,7 @@ Getting started with `nummify` is simple. Here’s how to use the library:
 ```javascript
 import numReader from 'nummify';
 
-console.log(numReader.readNumbers('1234.5', 'en')); // Output: "one thousand two hundred thirty four point five"
-console.log(numReader.readNumbers('1234.5', 'ar')); // Output: "الف ومئتان وأربعة وثلاثون فاصلة خمسة"
-```
-
-### CommonJS Require
-
-```javascript
-const numReader = require('nummify');
-
-console.log(numReader.readNumbers('1234.5', 'en')); // Output: "one thousand two hundred thirty four point five"
+console.log(numReader.readNumbers('1234.5', 'en')); // Output: "one thousand two hundred thirty-four point five"
 console.log(numReader.readNumbers('1234.5', 'ar')); // Output: "الف ومئتان وأربعة وثلاثون فاصلة خمسة"
 ```
 
@@ -70,7 +49,7 @@ Contributions are encouraged! Please feel free to submit a pull request or open 
 
 ## License
 
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the ISC License. See the [https://github.com/HakimiDev/nummify#LICENSE.md](LICENSE) file for details.
 
 ## Author
 
