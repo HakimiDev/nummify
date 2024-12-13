@@ -1,6 +1,6 @@
 {
   "name": "nummify",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A lightweight library for converting numbers into their written word representation in multiple languages.",
   "main": "index.js",
   "type": "module",
